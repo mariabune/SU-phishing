@@ -1,4 +1,72 @@
+/* variabler */
 /*partial filen hentes ind*/
 body {
   margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #d3dce2;
+}
+body p {
+  color: #333;
+  line-height: 1.5;
+}
+body h2 {
+  color: #28506e;
+}
+
+main {
+  @incude partial.flex;
+  height: 100vh;
+}
+
+.stage {
+  background-color: #d3dce2;
+  padding: 2em;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+.stage p {
+  margin-bottom: 1.5em;
+}
+
+.input {
+  width: 100%;
+  padding: 1em;
+  margin-top: 10px;
+  border: 2px solid #b45f28;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: #b45f28;
+  color: #ffffff;
+  padding: 0.8em 1.2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn:hover {
+  background-color: #3a7d44;
+  transition: 0.3s ease-in-out;
+}
+.btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .stage {
+    padding: 1.5em;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .btn {
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=style.css.map */

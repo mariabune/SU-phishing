@@ -1,0 +1,65 @@
+@use 'partial';     /*partial filen hentes ind*/
+
+body {
+    margin: 0;
+    font-family: partial.$font;
+    background-color: partial.$bg-color;
+
+    p {
+        color: partial.$text-color;
+        line-height: 1.5;
+    }
+
+    h2 {
+        color: partial.$primary-color;
+    }
+}
+
+main {
+    @incude partial.flex;   // centrerer
+    height: 100vh;
+}
+
+.stage {                                    // scenen
+    background-color: partial.$bg-color;
+    padding: 2em;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+
+    p {
+        margin-bottom: 1.5em;
+    }
+}
+
+.input {                // log ind felter
+    width: 100%;
+    padding: 1em;
+    margin-top: 10px;
+    border: 2px solid partial.$secondary-color;
+    box-sizing: border-box;
+}
+
+.btn {                  // knappperne
+    @include partial.btn;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {      // 600px???
+    .stage {
+        padding: 1.5em;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}

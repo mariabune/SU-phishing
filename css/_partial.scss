@@ -1,0 +1,44 @@
+/* variabler */
+$bg-color: #d3dce2;             // lys baggrundsfarve
+$primary-color: #28506e;        // overskrifter
+$secondary-color: #b45f28;      // knapper/detaljer
+$white: #ffffff;
+$text-color: #333;
+$hover-color: #3a7d44;
+
+$font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+// mixins
+
+@mixin flex($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// knapper
+@mixin btn($bg-color: $secondary-color, $color: $white, $btn-padding: 0.8em 1.2em, $radius: 8px) {
+    background-color: $bg-color;
+    color: $color;
+    padding: $btn-padding;
+    border: none;
+    border-radius: $radius;
+    cursor: pointer;
+    font-weight: 600;
+
+    &:hover{
+        background-color: $hover-color;
+        transition: 0.3s ease-in-out;
+    }
+}
+
+// inputfelter scene 2a
+
+@mixin input {
+    width: 100%;
+    padding: 0.8em;
+    margin: 0.5em 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: $font;
+}
