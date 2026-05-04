@@ -13,9 +13,58 @@ body h2 {
   color: #28506e;
 }
 
+.screen-reader-text {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: black;
+  color: white;
+  opacity: 0;
+}
+
+.screen-reader-text:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}
+
 header {
   border-bottom: 2px solid #b45f28;
-  background-color: white;
+  background-color: #ffffff;
+}
+
+nav {
+  height: 4em;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav img {
+  height: 80px;
+  border-radius: 15px;
+  border: 2px solid #28506e;
+}
+nav #bars {
+  display: none;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin: 0;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #28506e;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+nav ul li a:hover {
+  color: #b45f28;
 }
 
 main {
@@ -74,14 +123,51 @@ main {
   cursor: pointer;
   font-weight: 600;
   background-color: #3a7d44;
-  transition: 0.2 ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 .btn-login:hover {
   filter: brightness(1.1);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
+  header {
+    display: inline;
+  }
+  nav #bars {
+    display: flex;
+    border: none;
+    background-color: transparent;
+    font-size: 3em;
+    color: #b45f28;
+    cursor: pointer;
+  }
+  nav ul {
+    display: none;
+    height: auto;
+    border-top: 2px solid #b45f28;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+  }
+  nav ul li {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+  }
+  nav .show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #ffffff;
+  }
   .stage {
+    width: 85%;
     padding: 1.5em;
   }
   h2 {
@@ -89,5 +175,24 @@ main {
   }
   .btn {
     font-size: 14px;
+  }
+}
+@media screen and (max-width: 425px) {
+  nav img {
+    height: 60px;
+  }
+  .stage {
+    width: 90%;
+    padding: 1.2em;
+    border-radius: 8px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .btn {
+    font-size: 13px;
   }
 }/*# sourceMappingURL=style.css.map */

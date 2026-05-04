@@ -35,7 +35,7 @@ body {
                 // header styling
 header {            
     border-bottom: 2px solid partial.$secondary-color;
-    background-color: $white;
+    background-color: partial.$white;
 }
 
 nav {
@@ -44,7 +44,9 @@ nav {
     @include partial.flex($justify: space-between);
     
         img {
-            height: 40px;
+            height: 80px;
+            border-radius: 15px;
+            border: 2px solid partial.$primary-color;
         }
 
         #bars {
@@ -128,8 +130,57 @@ main {
     }
 }
 
-@media screen and (max-width: 600px) {      // 600px???
+// tablet / mobil
+
+@media screen and (max-width: 900px) {
+    header {
+        display: inline;
+    }
+
+    nav {
+
+        #bars {
+            display: flex;
+            border: none;
+            background-color: transparent;
+            font-size: 3em;
+            color: partial.$secondary-color;
+            cursor: pointer;
+        }
+
+        ul {
+            display: none;
+            height: auto;
+            border-top: 2px solid partial.$secondary-color;
+            flex-direction: column;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+
+            li {
+                display: flex;
+                justify-content: center;
+                padding: 1em 0;
+            }
+        }
+
+        .show {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            background-color: partial.$white;
+        }
+    }
+
+
+                                            // stage tilpasninge
     .stage {
+        width: 85%;
         padding: 1.5em;
     }
 
@@ -139,5 +190,34 @@ main {
 
     .btn {
         font-size: 14px;
+    }
+}
+
+// mobil styling header
+
+@media screen and (max-width: 425px) {
+    nav {
+
+        img {
+            height: 60px;
+        }
+    }
+
+    .stage {
+        width: 90%;
+        padding: 1.2em;
+        border-radius: 8px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 13px;
     }
 }
