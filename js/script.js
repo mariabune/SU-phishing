@@ -1,3 +1,41 @@
+// bars menu
+const bars = document.querySelector("#bars");
+const icon = document.querySelector("#bars i");
+const nav = document.querySelector("#menu");
+const navLinks = nav.querySelectorAll("li > a"); 
+
+// åbner og lukker menuen
+const openNav = () => {
+    nav.classList.toggle("show");
+
+
+    icon.classList.toggle("fa-bars");       // skifter fra bars til kryds
+    icon.classList.toggle("fa-xmark");
+
+    const expanded = bars.getAttribute("aria-expanded") === "true"; // aria
+    bars.setAttribute("aria-expanded", expanded ? "false" : "true");
+
+    const label = bars.getAttribute("aria-label") === "åben navigation";
+    bars.setAttribute("aria-label", label ? "luk navigation" : "åben navigation");
+};
+
+bars.addEventListener("click", openNav);        // klik event til knappen. åbn/luk
+
+// luk menu når man klikker på et link
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("show");
+
+        icon.classList.add("fa-bars");
+        icon.classList.remove("fa-xmark");
+
+        bars.setAttribute("aria-expanded", "false");
+        bars.setAttribute("aria-label", "åben navigation");
+    });
+});
+
+
+// scenen
 const btns = document.querySelectorAll(".btn");
 const main = document.querySelector("main");
 
