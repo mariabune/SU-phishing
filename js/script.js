@@ -32,10 +32,13 @@ const updateUI = (h2Text, pText, btnsText, showLoginForm) => {
 
     }
 
-    btnsText.forEach(text => {                       // buttons
+    btnsText.forEach(text => {                      // knapper
         const button = document.createElement("button");
         button.textContent = text;
         button.classList.add("btn");
+        if (text === "Log ind" || text === "Log ind nu") {
+            button.classList.add("btn-login");    // gør at log ind nu og log ind knapper bliver grønne ved hover
+        }
         button.addEventListener("click", nextStage);
         section.append(button);
     });

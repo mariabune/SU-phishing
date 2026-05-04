@@ -13,13 +13,21 @@ body h2 {
   color: #28506e;
 }
 
+header {
+  border-bottom: 2px solid #b45f28;
+  background-color: white;
+}
+
 main {
-  @incude partial.flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
 .stage {
   background-color: #d3dce2;
+  border: 2px solid #28506e;
   padding: 2em;
   border-radius: 10px;
   width: 90%;
@@ -46,17 +54,30 @@ main {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-}
-.btn:hover {
-  background-color: #3a7d44;
-  transition: 0.3s ease-in-out;
-}
-.btn {
   display: block;
   width: 100%;
   margin-top: 10px;
   border: none;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.btn:hover {
+  filter: brightness(0.9);
+}
+
+.btn-login {
+  background-color: #b45f28;
+  color: #ffffff;
+  padding: 0.8em 1.2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #3a7d44;
+  transition: 0.2 ease-in-out;
+}
+.btn-login:hover {
+  filter: brightness(1.1);
 }
 
 @media screen and (max-width: 600px) {

@@ -26,10 +26,6 @@ $font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     cursor: pointer;
     font-weight: 600;
 
-    &:hover{
-        background-color: $hover-color;
-        transition: 0.3s ease-in-out;
-    }
 }
 
 // inputfelter scene 2a
