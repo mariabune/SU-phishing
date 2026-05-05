@@ -107,7 +107,7 @@ const nextStage = (e) => {
             break;
 
         // Scene 2a (login-scene)
-        case "Log ind":                      // --> Scene 3a (phishing ending-scene)
+        case "Log ind":                      // --> Scene 3a (phishing bad ending-scene)
             h2Text = "Du er blevet phishet";
             pText = "Giv aldrig dine oplysninger via links i beskeder - gå altid direkte til officielle hjemmesider";
             btnsText = ["Start forfra"];
@@ -115,13 +115,13 @@ const nextStage = (e) => {
 
         case "Tilbage":                         // --> Scene 1 (start-scene)
             h2Text = "Besked fra SU-kontoret";  
-            pText = "Din SU er i fare. Opdater dine oplysninger nu for ikke at miste din SU næste måned";
+            pText = "Din SU er i fare. Opdater dine oplysninger nu for ikke at miste din SU næste måned.";
             btnsText = ["Log ind nu", "Ignorer"];
             break;
 
         case "Luk":                       // --> Scene 4a (safe endning-scene) 
             h2Text = "Tillykke";
-            pText = "Du undgik phishing ved at lukke siden og ikke give dine oplysninger";
+            pText = "Du undgik phishing ved at lukke siden og ikke give dine oplysninger. Husk at bloker og anmeld som phishing.";
             btnsText = ["Start forfra"];
             break;
 
